@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,4 +12,5 @@ export class AuthService {
   login(email: string, senha: string): Observable<any> {
     return this.http.post('${thisAPI_URL}/login', {email, senha});
   }
+  
 }
